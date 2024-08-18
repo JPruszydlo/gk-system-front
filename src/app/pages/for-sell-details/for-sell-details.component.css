@@ -1,0 +1,181 @@
+@media screen and (max-width: 999px) {
+    .offer-description hr {
+        display: none;
+    }
+    .offer-content > div {
+        @apply mx-auto;
+        width: 95%;
+    }
+    .offer-content .offer-params > div {
+        @apply text-sm grid grid-cols-1 ;
+    }
+    .offer-content .details {
+        @apply mb-20
+    }
+    .offer-params .param:nth-child(odd){
+        @apply bg-red-50 border-y-2 border-red-100;
+        padding: 6px 8px 6px 8px;
+    }
+    .offer-description .contact {
+        @apply text-center border-2 py-4 mt-8 border-red-300 rounded-xl
+    }
+    .offer-description .contact > i {
+        @apply text-xl;
+    }
+    .offer-description .contact > div > p {
+        @apply ml-2 mb-2
+    }
+    .offer-description .contact > i, .offer-description .contact > div, .offer-description .contact > div > p {
+        @apply inline-block
+    }
+    .plan .details {
+        @apply grid grid-cols-1
+    }
+    .plan .details div:first-of-type {
+        order: 1
+    }
+    .plan .details div:first-of-type p:first-of-type span {
+        display: none;
+    }
+    .plan .details div:first-of-type p:first-of-type::after {
+        content: "Suma" !important;
+    }
+}
+@media screen and (min-width: 1000px) {
+    
+    .offer-content .plan-title {
+        @apply hidden
+    }
+    .offer-description .contact > i {
+        @apply text-4xl;
+    }
+    .offer-description .contact > p {
+        @apply text-right;
+    }
+    .offer-content {
+        @apply m-auto relative;
+        width: 90%;
+    }
+    .offer-content .offer-header {
+        display: grid;
+        grid-template-columns: 55% 43%;
+        column-gap: 2%;
+    }
+    
+    .offer-params .param:nth-child(4n+1),
+    .offer-params .param:nth-child(4n+2){
+        @apply bg-red-50 border-y-2 border-red-100;
+        padding: 6px 8px 6px 8px;
+    }
+    .offer-header .offer-description > div {
+        @apply p-4 text-sm border-2 rounded-lg;
+    }
+    .offer-header .offer-description hr {
+        @apply my-4
+    }
+    .offer-header .contact {
+        display: grid;
+        grid-template-columns: 40px auto auto;
+        align-items: center
+    }
+    .offer-header .contact > p {
+        @apply text-red-500 font-bold text-xl text-nowrap text-right;
+    }
+    .offer-content .offer-params > div {
+        @apply text-sm grid grid-cols-2 ;
+    }
+    .offer-plans .plan {
+        @apply mb-10;
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+
+    .plan .image img {
+        @apply mx-auto;
+        height: 80vh;
+    }
+    
+    .offer-header .contact {
+        display: grid;
+        grid-template-columns: 40px auto auto;
+        align-items: center
+    }
+    .plan .image img {
+        height: 80vh;
+    }
+}
+.offer-header .offer-description > div {
+    @apply text-justify
+}
+.plan .details > div:nth-child(even) {
+    @apply bg-red-50 border-y-2 border-red-100;
+    padding: 6px 8px 6px 8px;
+}
+.offer-plans .plan > div:last-of-type {
+    @apply px-2
+}
+.plan .details div:first-of-type {
+    @apply font-bold text-base;
+    @apply border-red-200;
+    border-top-width: 1px
+}
+.plan .details div:last-of-type {
+    @apply border-red-200;
+    border-bottom-width: 1px
+}
+.plan .details {
+    @apply p-2;
+}
+.plan .details > div {
+    @apply p-2 text-sm;
+    display: grid;
+    grid-template-columns: auto fit-content(120px);
+}
+
+.plan .image img {
+    @apply mx-auto;
+}
+
+
+.offer-header .contact > p {
+    @apply text-red-500 font-bold text-xl;
+}
+.offer-header {
+    @apply mb-10;
+}
+.offer-params {
+    @apply mb-10;
+}
+.offer-params .param p:last-of-type {
+    @apply text-right
+}
+.offer-params .param {
+    @apply grid grid-cols-2 p-2 text-nowrap m-auto;
+    width: 80%;
+}
+.offer-content .plan-title {
+    @apply mx-auto text-base font-semibold text-red-500 border-b-2 border-red-500 mb-4;
+    width: 95%
+}
+.offer-content .panel-title {
+    @apply text-xl font-semibold text-red-500 border-b-2 border-red-500 mb-4;
+}
+.offer-content .galleria-image img {
+    @apply rounded-lg h-full w-full;
+    margin: 0 auto;
+}
+.offer-content .galleria-image {
+    @apply w-full rounded-md mb-2;
+    background-position: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+.offer-name {
+    @apply w-full text-left text-black mt-5;
+}
+.offer-name p:first-of-type {
+    @apply text-3xl font-semibold
+}
+.offer-name p:last-of-type {
+    @apply text-lg
+}

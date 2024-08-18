@@ -1,0 +1,77 @@
+<p-toast position="top-center" styleClass="font-bold text-lg" />
+<div class="footer-panel" *ngIf="showFullFooter">
+  <div class="footer-main-grid">
+    <div class="contact">
+      <div class="text-base text-white">
+        <p class="text-red-500 text-2xl">
+          <b
+            >{{ getConfigParam('companyName') }} <span class="text-nowrap">{{ getConfigParam('ceoName') }}</span></b
+          >
+        </p>
+        <p class="py-2">tel: {{ getConfigParam('phone') }}</p>
+        <p>
+          e-mail: <a href="mailto:biuro@gk-system.pl" class="underline">{{ getConfigParam('email') }}</a>
+        </p>
+      </div>
+      <div><button onclick="window.location.href='/contact'">Skontaktuj się z nami</button></div>
+      <div class="contact-form">
+        <div><input #name type="text" placeholder="Imię" /><input #surname type="text" placeholder="Nazwisko" /></div>
+        <div><input #email type="text" placeholder="Email" /><input #phone type="text" placeholder="Telefon" /></div>
+        <div><textarea #content rows="4" placeholder="Wiadomość"></textarea></div>
+        <div>
+          <input
+            type="checkbox"
+            id="private-policy"
+            name="private-policy"
+            #policyChecked
+            (change)="btnSend.className = policyChecked.checked ? 'btn-enabled' : 'btn-disabled'"
+          />
+          <label for="private-policy" class="text-xs">{{ getConfigParam('privatePolicyCheckbox') }}</label>
+        </div>
+        <div>
+          <button class="btn-disabled" (click)="sendButtonClick(name, surname, phone, email, content)" #btnSend>
+            Wyślij
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="map">
+      <iframe
+        [src]="mapTag"
+        style="border: 0; height: 100%; width: 100%"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+    <div class="text-gray-400 py-3 text-base text-center w-screen">
+      © Copyright 2024
+      <a class="font-bold hover:text-gray-500 hover:underline" href="mailto:biuro@gk-system.pl">GK-System</a> |
+      <span class="text-nowrap">All Rights Reserved</span> | Projekt i realizacja
+      <a href="mailto:jakub.pruszydlo@gmail.com" class="text-nowrap font-bold hover:text-gray-500 hover:underline"
+        >AJ Studio</a
+      >
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!showFullFooter" id="footer-panel">
+  <iframe
+    #map
+    @fadeIn
+    (loadeddata)="map.style.display = 'block'"
+    [src]="mapTag"
+    style="border: 0; height: 500px; width: 100%"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+  <div class="text-gray-400 p-3 text-base text-center w-screen bg-black bg-opacity-80">
+    © Copyright 2024
+    <a href="mailto:biuro@gk-system.pl" class="font-bold hover:text-gray-500 hover:underline">{{
+      getConfigParam('companyName')
+    }}</a>
+    | All Rights Reserved | Projekt i realizacja
+    <a href="mailto:jakub.pruszydlo@gmail.com" class="font-bold hover:text-gray-500 hover:underline">AJ Studio</a>
+  </div>
+</div>

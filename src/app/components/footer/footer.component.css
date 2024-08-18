@@ -1,0 +1,80 @@
+@media screen and (max-width: 999px) {
+    .footer-panel .footer-main-grid .map {
+        @apply w-full h-52
+    }
+
+    .footer-panel .contact-form {
+        display: none;
+    }
+    .footer-panel .contact {
+        @apply px-4
+    }
+    .footer-panel .contact div:first-of-type {
+        @apply text-center py-2
+    }
+    .footer-panel .contact div:nth-of-type(2) {
+        @apply mt-5 mb-8 text-center
+    }
+    .footer-panel .contact div:nth-of-type(2) button {
+        @apply py-2 px-3 bg-red-500 rounded-md font-bold text-gray-200;
+        content: "Kontakt" !important;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .footer-panel .footer-main-grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .footer-panel .footer-main-grid div {
+        @apply p-2;
+    }
+    .footer-panel .footer-main-grid span {
+        @apply w-1/2;
+    }
+    .footer-panel .footer-main-grid .contact > div:nth-of-type(2) {
+        @apply text-white text-xl mt-2;
+    }
+    .footer-panel .footer-main-grid .contact-form div:nth-of-type(1),
+    .footer-panel .footer-main-grid .contact-form div:nth-of-type(2) {
+        display: grid;
+        grid-template-columns: 49% 49%;
+        column-gap: 2%;
+    }
+    .footer-panel .footer-main-grid .contact-form div:nth-of-type(3) {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .footer-panel .footer-main-grid .contact-form div:nth-of-type(4) {
+        @apply text-white;
+        display: grid;
+        grid-template-columns: 30px auto;
+    }
+    .footer-panel .contact div:nth-of-type(2) button {
+        @apply pointer-events-none
+    }
+    .footer-panel .contact-form input[type="text"], .footer-panel .contact-form textarea{
+        @apply p-2 border-2 bg-gray-100
+    }
+    .footer-panel .footer-main-grid .map {
+        @apply py-3 pl-4 pr-5 
+    }
+}
+.footer-panel {
+    background-image: url('../../../assets/images/construction-site-592458_1920.jpg'); 
+    width: 100vw
+}
+.footer-panel .footer-main-grid {
+    @apply bg-black bg-opacity-70
+}
+
+.footer-panel .contact-form input[type="checkbox"] {
+    @apply w-5
+}
+.btn-enabled {
+    @apply bg-red-500 px-5 py-1 rounded-md ml-4 mt-4 mb-3 hover:bg-red-600;
+}
+.btn-disabled{
+    @apply bg-red-500 px-5 py-1 rounded-md ml-4 mt-4 mb-3 pointer-events-none;
+    opacity: 0.6;
+    cursor: not-allowed;
+}

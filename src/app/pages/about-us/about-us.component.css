@@ -1,0 +1,13 @@
+@media screen and (max-width: 999px) {
+    .about-us-content {
+        @apply px-5 
+    }
+}
+@media screen and (min-width: 1000px) {
+    .about-us-content {
+        @apply px-20 
+    }
+}
+.about-us-content {
+    @apply py-10 text-base text-justify;
+}

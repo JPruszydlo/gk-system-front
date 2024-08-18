@@ -1,0 +1,20 @@
+<div class="references-component">
+  <p class="text-center pt-2 mb-4 text-2xl font-bold">Co piszą o nas klienci?</p>
+  <div class="">
+    <div class="references-grid">
+      <div class="reference" *ngFor="let reference of references">
+        <div class="content text-center">
+          <p class="text-justify" *ngIf="reference.text != ''">{{ reference.text }}</p>
+          <p-image
+            [src]="'../../../assets/images/' + reference.image"
+            *ngIf="reference.image != ''"
+            alt="Image"
+            width="250"
+            [preview]="true"
+          />
+        </div>
+        <p class="title font-bold">{{ reference.customerName }}</p>
+      </div>
+    </div>
+  </div>
+</div>

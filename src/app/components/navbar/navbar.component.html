@@ -1,0 +1,30 @@
+<div id="navbar">
+  <a href="/" (click)="navChanged.emit()">
+    <div class="nav-logo">
+      <img src="../../../assets/images/logo2_white.png" class="h-12" />
+      <p class="">GK-System</p>
+    </div>
+  </a>
+  <button class="menu-bars" (click)="navItems.style.display = navItems.style.display == 'flex' ? 'none' : 'flex'">
+    <i class="pi pi-bars text-white"></i>
+  </button>
+  <ul #navItems>
+    <a href="/" (click)="navChanged.emit()"><li [className]="resolveActiveElement('')">Strona główna</li></a>
+
+    <a href="/for-sell" (click)="navChanged.emit()"
+      ><li [className]="resolveActiveElement('for-sell')">Domy na sprzedaż</li></a
+    >
+
+    <a (click)="navChanged.emit()" href="/about-us"><li [className]="resolveActiveElement('about-us')">O nas</li></a>
+
+    <a (click)="navChanged.emit()" href="/realisations"
+      ><li [className]="resolveActiveElement('realisations')">Realizacje</li></a
+    >
+
+    <a (click)="navChanged.emit()" href="/references"
+      ><li [className]="resolveActiveElement('references')">Referencje</li></a
+    >
+
+    <a (click)="navChanged.emit()" href="/contact"><li [className]="resolveActiveElement('contact')">Kontakt</li></a>
+  </ul>
+</div>

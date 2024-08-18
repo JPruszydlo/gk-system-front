@@ -1,0 +1,10 @@
+@media screen and (max-width: 999px) {
+    .references-panel  {
+        @apply pl-5;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .references-panel {
+        @apply  px-10
+    }
+}

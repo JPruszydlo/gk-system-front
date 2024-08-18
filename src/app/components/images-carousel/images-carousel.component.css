@@ -1,0 +1,70 @@
+@media screen and (max-width: 999px) {
+    .carousel {
+        @apply h-screen mb-5
+    }
+    #carousel-item .text-box {
+        @apply absolute top-1/2 -translate-y-3/4 left-1/2 -translate-x-1/2;
+        width: 90%;
+        
+    }
+    #carousel-item .text-box .text {
+        @apply text-gray-400
+    }
+    #carousel-item .text-box .title {
+        font-size: min(6vw, 36px);
+    }
+    #carousel-item .text-box .text {
+        @apply text-justify;
+        font-size: min(5vw, 24px)
+    }
+    .carousel .info-item {
+        @apply text-center relative -top-4 -translate-y-full pt-2 px-2;
+        font-size: min(4.5vw, 20px);
+        display: grid;
+    }
+}
+@media screen and (min-width: 1000px) {
+    #carousel-item .text-box {
+        @apply absolute top-1/2 -translate-y-1/2 right-48;
+        min-width: 300px; 
+        max-width: 40%
+    }
+    #carousel-item .text-box .title {
+        font-size: min(2vw, 30px)
+    }
+    #carousel-item .text-box .text {
+        @apply text-gray-400;
+        font-size: min(1.4vw, 20px)
+    }
+    .carousel .info-item {
+        @apply w-full relative pl-4;
+        top: -16px;
+        font-size: 20px;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        align-items: center;
+    }
+    .carousel .info-item div:last-of-type {
+        @apply text-center
+    }
+}
+.carousel .info-item {
+    @apply bg-gray-200 
+}
+.carousel .info-item button {
+    @apply px-4 py-2 bg-red-500 rounded-md hover:bg-red-600 my-2
+} 
+#carousel-item .text-box button {
+    @apply px-8 py-2 bg-red-500 text-white font-semibold rounded-sm mt-3 float-right hover:bg-red-600 pointer-events-auto
+}
+#carousel-item .text-box {
+    @apply bg-black bg-opacity-70 p-4 rounded;
+}
+#carousel-item {
+    @apply relative;
+    background-position: bottom;
+    background-size: cover;
+}
+#carousel-item .text-box .title {
+    @apply text-red-500 font-bold border-b-2 border-b-red-500 pb-4 mb-3
+}

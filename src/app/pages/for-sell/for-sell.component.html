@@ -1,0 +1,33 @@
+<div class="realisations-grid">
+  <p>Oferta domów na sprzedaż</p>
+  <div
+    @fadeIn
+    class="realisation-item"
+    *ngFor="let offer of offers"
+    [routerLink]="'/for-sell-details'"
+    [queryParams]="{ index: offer.id }"
+  >
+    <div @fadeIn>
+      <p-carousel
+        [value]="offer.offerVisualisations"
+        [showNavigators]="false"
+        [showIndicators]="false"
+        [numVisible]="1"
+        [numScroll]="1"
+        [circular]="false"
+        [autoplayInterval]="2000"
+      >
+        <ng-template let-item pTemplate="item">
+          <div class="carousel-item" style.background-image="url('../../../assets/images/{{ item.image }}')"></div>
+        </ng-template>
+      </p-carousel>
+
+      <div class="offer-description">
+        <p>
+          {{ offer.name }}
+        </p>
+        <p>{{ offer.name2 }}</p>
+      </div>
+    </div>
+  </div>
+</div>

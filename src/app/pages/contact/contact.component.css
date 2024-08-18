@@ -1,0 +1,155 @@
+@media screen and (max-width: 999px) {
+    .contact-panel {
+        @apply py-4 px-5;
+        display: flex;
+        flex-flow: column;
+    }
+    .contact-panel > p {
+        @apply text-center text-xl pt-2 pb-6 font-semibold block;
+    }
+    .contact-panel .contact-data {
+        @apply py-4;
+        order: 4
+    }
+    .contact-panel .contact-data-form {
+        order: 1;
+    }
+    .contact-panel .contact-message {
+        @apply h-48 mb-4;
+        order: 2;
+    }
+    .contact-panel .private-policy {
+        @apply my-3;
+        order: 3
+    }
+    
+    .contact-panel > div:last-of-type p button{
+        @apply px-6 py-2 mt-3;
+    }
+    .contact-panel > div:last-of-type p {
+        @apply text-center m-auto;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }  
+    .contact-panel .contact-data-form div input, .contact-panel .contact-message textarea {
+        @apply mt-4
+    }
+}
+@media screen and (min-width: 1000px) {
+    .contact-panel > p {
+        @apply hidden;
+    }
+    .contact-panel {
+        @apply py-10 m-auto;
+        width: 95%;
+        display: grid;
+        grid-template-columns: 25% 30% auto;
+    }
+    .contact-panel .contact-data {
+        @apply h-full align-middle;
+        display: flex;
+        flex-flow: column ;
+    }
+    .contact-panel .contact-data-form, .contact-panel .contact-message {
+        @apply px-5 py-4
+    }
+
+    .contact-panel > div:last-of-type p {
+        grid-column-start: 2;
+    } 
+    .contact-panel div:last-of-type button {
+        @apply float-end px-5 py-1;
+    } 
+    .contact-panel .contact-data-form div:not(.contact-panel .contact-data-form div:first-of-type) input {
+        @apply mt-4
+    }
+}  
+
+.contact-panel input[type="text"], .contact-panel .contact-message textarea {
+    @apply border-2 py-1 px-2 w-full bg-gray-100
+}
+.contact-panel .contact-data div:nth-of-type(n+2):nth-of-type(-n+4)  {
+    line-height: 20px;
+    padding-left: 33px;
+}
+.contact-panel .contact-data div:nth-of-type(n+5):nth-of-type(-n+6) {
+    @apply text-nowrap mt-5;
+    display: grid;
+    grid-template-columns: 32px auto;
+    align-items: center;
+}
+.contact-panel > div:last-of-type {
+    @apply px-5;
+    grid-column-start: 3;
+    display: grid;
+    grid-template-columns: 30px auto;
+}
+.contact-panel > div:last-of-type input {
+    @apply w-5;
+}
+.contact-panel .contact-data div:nth-of-type(n+5):nth-of-type(-n+6) svg {
+    width: 32px !important;
+    height: 32px !important;
+}
+.contact-panel .contact-data div:first-of-type span, .contact-panel .contact-data div:nth-of-type(n+5):nth-of-type(-n+6) > span{
+  @apply text-red-500 text-xl font-bold
+}
+
+.contact-panel .contact-message textarea {
+    @apply resize-none h-full
+}
+.contact-panel div:last-of-type button {
+    @apply bg-red-500 rounded-md;
+}
+.contact-panel div:last-of-type .btn-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+/* .contact-grid {
+    @apply w-full px-10 pt-10 pb-32;
+    display: grid;
+    grid-template-columns: 25% 25% auto;
+}
+
+.contact-grid .contact-data {
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.contact-grid input[type="text"] {
+    @apply bg-gray-200 w-full px-4 py-2 text-xl border-2 border-gray-300;
+}
+.contact-message textarea {
+    @apply bg-gray-200 border-2 border-gray-300 w-full h-full px-4 py-2;
+    resize: none;
+}
+.contact-name, .contact-surname, .contact-email, .contact-phone {
+    @apply mx-4 my-2;
+    grid-column: 2;
+}
+.contact-message {
+    @apply mx-4 my-2;
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.contact-grid .policy {
+    padding-left: 10px;
+}
+.contact-grid .policy input {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+.contact-grid .policy label {
+    width: 90%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.contact-grid .policy button {
+    @apply bg-red-500 px-5 py-1 rounded-md ml-4 mt-4 float-end;
+}
+.contact-grid .btn-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+} */

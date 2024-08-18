@@ -1,0 +1,111 @@
+<div class="offer-content">
+  <div class="offer-name">
+    <p>{{ offerDetails?.name }}</p>
+    <p>{{ offerDetails?.name2 }}</p>
+  </div>
+  <div class="offer-header">
+    <p-galleria
+      class="fullscreen-galleria absolute"
+      [value]="gallery"
+      [(visible)]="fullscreen"
+      [(activeIndex)]="fullscreenActive"
+      [circular]="true"
+      [fullScreen]="true"
+      [showItemNavigators]="true"
+      [showThumbnails]="false"
+      (visibleChange)="toggleFullscreen(undefined)"
+    >
+      <ng-template pTemplate="item" let-item>
+        <img [src]="'../../../assets/images/' + item" style="max-height: 88vh" />
+      </ng-template>
+    </p-galleria>
+
+    <p-galleria
+      [value]="gallery"
+      [responsiveOptions]="responsiveOptions"
+      [numVisible]="5"
+      [showItemNavigators]="true"
+      [circular]="true"
+    >
+      <ng-template pTemplate="item" let-item>
+        <div class="w-full h-96">
+          <img
+            [src]="'../../../assets/images/' + item"
+            style="position: absolute; top: 50%; transform: translate(-50%, -50%); max-height: 100%; left: 50%"
+            (click)="toggleFullscreen(gallery?.indexOf(item))"
+          />
+        </div>
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+        <div
+          style="
+            background-image: url('../../../assets/images/{{ item }}'); 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+          "
+          class="h-20 w-28 grid grid-nogutter justify-content-center"
+        ></div>
+        <!-- <div class="grid grid-nogutter justify-content-center">
+          <img [src]="'../../../assets/images/' + item" class="" style="max-height: 100px" />
+        </div> -->
+      </ng-template>
+    </p-galleria>
+    <div class="offer-description">
+      <p class="panel-title mt-2">Opis oferty</p>
+      <div>
+        <p>
+          Nieruchomość obejmująca działkę o powierzchni wynoszącej 1539 m2, położona jest w Jaworznie (dzielnica
+          Bielany) zabudowana budynkiem mieszkalnym jednorodzinnym w zabudowie bliźniaczej. Wokół domu znajduje się
+          pięknie zagospodarowany ogród z dużą ilością drzew i krzewów co gwarantuje prywatność. Możliwość wydzielenia
+          kilku stref relaksu. W odległości ok. 450 m od nieruchomości zlokalizowany jest wjazd na drogę krajową nr 79,
+          nieco dalej w odległości ok. 6,2 km znajduje się węzeł komunikacyjny łączący drogę krajową nr 79 z autostradą
+          A4 + drogą ekspresową S1. W pobliżu znajdują się również przystanki autobusowe. Bliska lokalizacja sklepów,
+          przedszkola, szkoły.
+        </p>
+        <hr />
+        <div class="contact">
+          <i class="pi pi-phone"></i>
+          <div>
+            <p>Masz pytania?</p>
+            <p>Zadzwoń!</p>
+          </div>
+          <p>+48 999 999 999</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="offer-params">
+    <p class="panel-title">Parametry domu</p>
+    <div>
+      <div *ngFor="let detail of offerDetails?.offerParams; let idx = index" class="param">
+        <p>{{ detail.name }}:</p>
+        <p>{{ detail.value }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="offer-plans">
+    <p class="panel-title">Rzuty</p>
+    <div class="plan" *ngFor="let plan of offerDetails?.offerPlans">
+      <p class="plan-title">{{ plan.floorName }}</p>
+      <div class="image text-center">
+        <p-image [src]="'../../../assets/images/' + plan.image" [preview]="true" />
+      </div>
+      <div>
+        <div class="details">
+          <div>
+            <p>
+              <span>{{ plan.floorName }}</span>
+            </p>
+            <p>{{ getTotal(plan.offerPlanParams) }}</p>
+          </div>
+          <div *ngFor="let detail of plan.offerPlanParams; let idx = index">
+            <p>{{ detail.name }}</p>
+            <p>{{ detail.value }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

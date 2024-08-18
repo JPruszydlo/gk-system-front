@@ -1,0 +1,43 @@
+@media screen and (max-width: 999px) {
+    .panel {
+        @apply w-screen;
+        display: flex;
+        flex-flow: column;
+    }
+    .panel .desc {
+        @apply text-black text-center font-semibold my-4;
+        font-size: min(5vw, 36px);
+        order: 1
+    }
+    .panel .images {
+        @apply pb-4 ;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        column-gap: 5%;
+        row-gap: 10px;
+        order: 2;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .panel{
+        display: grid;
+        grid-template-columns: 75% 25%;
+        align-items: center;
+    }
+    .panel .desc {
+        @apply text-black text-center text-4xl font-semibold;
+    }
+    .panel .images {
+        display: grid;
+        grid-template-columns: 19.2% 19.2% 19.2% 19.2% 19.2%;
+        column-gap: 1%;
+        row-gap: 10px;
+    }
+}
+
+.panel {
+    @apply py-2 pl-4 pr-6 ;
+}
+.panel .images img {
+    @apply w-full h-full;
+}

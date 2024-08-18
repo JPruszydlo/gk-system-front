@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+
+.references-panel .p-image-preview{
+    @apply z-30
+}
+.references-panel .p-carousel-prev{
+    @apply left-0 ml-2
+} 
+.references-panel .p-carousel-next {
+    @apply right-0 mr-2
+}
+.references-panel .p-carousel-prev, .references-panel .p-carousel-next {
+    @apply absolute bg-black bg-opacity-20 z-30 rounded px-6 py-6
+}
+.p-image-action {
+    @apply text-white bg-black bg-opacity-30
+}
+
+.p-image-preview-indicator{
+    @apply bg-black text-white bg-opacity-30
+}
+.p-galleria-item-nav {
+    @apply bg-black text-white mx-2 bg-opacity-50 z-50;
+}
+.offer-content .fullscreen-galleria .p-galleria-item-nav {
+    @apply bg-black -translate-y-14 text-white mx-2 bg-opacity-50
+}
+.p-galleria-thumbnail-next, .p-galleria-thumbnail-prev {
+    @apply text-white
+}
+::-webkit-scrollbar {
+    @apply w-2.5;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    @apply bg-gray-200;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-red-500 rounded;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-red-600;
+}
+body, html {
+    overflow-x: hidden;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+#offer-tab-view .p-tabview-panels {
+    @apply p-0;
+}
+
+#offer-tab-view .p-tabview-nav-container .p-highlight {
+    @apply text-red-500 border-b-2
+}
+
+.offer-gallery .ng-star-inserted  {
+    @apply text-white z-50
+}
+
+.p-galleria-close-icon {
+    @apply text-white
+}
+
+.p-galleria-thumbnail-item-content img {
+    max-height: 160px;
+}

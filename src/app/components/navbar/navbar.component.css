@@ -1,0 +1,73 @@
+@media screen and (max-width: 999px) {
+    #navbar ul {
+        @apply bg-black bg-opacity-85 text-white;
+        font-size: min(6vw, 30px);
+        height: 70vh;
+        width: 100%;
+        display: none;
+        flex-flow: column;
+    }
+    #navbar ul a li {
+        @apply  m-auto
+    }
+    #navbar ul a:first-of-type {
+        @apply border-t-2
+    }
+    #navbar ul a {
+        @apply border-b-2;
+        display: flex;
+        flex: 1;
+        align-items: center;
+    }
+    /* #navbar ul { 
+        display: none;
+        position: relative;
+        top: -1px;
+    }
+
+    #navbar ul li {
+        @apply bg-black bg-opacity-85 text-center border-gray-300 text-white py-4;
+        font-size: min(5vw, 25px);
+        border-bottom-width: 1px;
+    }
+    #navbar ul li:first-of-type {
+        border-top-width: 1px;
+    }
+    #navbar .active {
+        @apply text-red-500
+    } */
+ 
+}
+@media screen and (min-width: 1000px) {
+    #navbar .active {
+        @apply bg-red-500;
+    }
+    #navbar .menu-bars {
+        display: none;
+    }
+    #navbar a  {
+        @apply h-full;
+        display: inline-block;
+        font-size: 17px
+    }
+    #navbar li {
+        @apply px-5 h-full pt-6 hover:bg-red-500;
+        display: block;
+    }
+    #navbar ul {
+        @apply z-20 text-white h-full absolute top-0 right-2;
+    }
+}
+#navbar .menu-bars {
+    @apply absolute top-1/2 -translate-y-1/2 right-20
+}
+#navbar .menu-bars i {
+    @apply text-3xl
+}
+#navbar { 
+    @apply bg-opacity-80 select-none fixed top-0 left-0 w-screen h-20 bg-black z-10  
+}
+#navbar .nav-logo {
+    @apply inline-block text-white h-20 ml-20 pt-2 w-36 cursor-pointer;
+    font-size: 16px;
+}

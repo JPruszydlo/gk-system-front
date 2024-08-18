@@ -1,0 +1,70 @@
+@media screen and (max-width: 999px) {
+    .realisations-content .title {
+        @apply block
+    }
+    .realisations-content {
+        @apply mt-5
+    }
+    .realisations-content .realisation {
+        @apply mb-5;
+        display: flex;
+        flex-direction: column;
+        width: 96%;
+    }
+    .realisations-content .realisation-title {
+        @apply pt-2;
+        order: 1;
+    }
+    .realisations-content .images-grid {
+        order: 2;
+        display: grid;
+        grid-template-columns: 32% 32% 32%;
+        column-gap: 2%;
+        row-gap: 10px;
+        width: 95%; 
+        margin: 16px auto 8px auto;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .realisations-content .title {
+        @apply hidden
+    }
+    .realisations-content {
+        @apply mt-10
+    }
+    .realisations-content .realisation {
+        @apply mb-8 w-3/4 
+    }
+    .realisations-content .images-grid {
+        display: grid;
+        grid-template-columns: 18% 18% 18% 18% 18%;
+        column-gap: 2.5%;
+        row-gap: 10px;
+        width: 95%; 
+        margin: 16px auto 8px auto;
+    }
+}
+.realisations-content .realisation-title {
+    @apply align-middle text-center text-xl font-semibold mb-2 text-black
+}
+.realisations-content .realisation {
+    @apply border-2 border-gray-300 mx-auto px-2
+}
+.realisations-content .title {
+    @apply text-center text-black pt-5 mb-8 text-2xl font-bold
+}
+
+.custom-nav-button-prev,
+.custom-nav-button-next {
+    @apply text-white fixed top-1/2 -translate-y-1/2 p-2 bg-black rounded-lg bg-opacity-60
+}
+.custom-nav-button-next {
+    @apply right-0 mr-2
+}
+.custom-nav-button-prev {
+    @apply left-0 ml-2
+}
+.realisations-content .images-grid img {
+    height: 100%;
+    cursor: pointer;
+}

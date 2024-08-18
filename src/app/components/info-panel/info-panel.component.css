@@ -1,0 +1,50 @@
+@media screen and (max-width: 999px) {
+
+    .info-panel-grid svg {
+        width: 10vw;
+    }
+    .info-panel-grid {
+        @apply px-3;
+        font-size: 3vw;
+    }
+    .info-panel-title {
+        font-size: min(5vw, 24px);
+    }
+}
+@media screen and (min-width: 1000px) {
+    .info-panel-grid svg {
+        width: 100px;
+        height: 100px;
+    }
+    .info-panel-title {
+        @apply text-2xl;
+    }
+}
+.info-panel {
+    background-image: url('../../../assets/images/hardhat-4274430_1920.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+}
+.info-panel-grid {
+    @apply bg-black bg-opacity-70 pb-3 text-white font-bold;
+    background-position: bottom;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.info-panel-grid .info-panel-title {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    text-align: center;
+}
+
+.info-panel-title {
+    @apply pt-2 pb-2 font-semibold;
+}
+.info-panel-grid svg {
+    margin: auto;
+}
+.info-panel-grid div {
+    text-align: center;
+}

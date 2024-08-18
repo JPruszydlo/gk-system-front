@@ -1,0 +1,39 @@
+<div class="realisations-content">
+  <p class="title">Realizacje</p>
+  <div class="realisation" *ngFor="let realisation of realisations; let r_index = index">
+    <div class="images-grid w-full">
+      <img
+        #imgElement
+        *ngFor="let image of realisation.realisationImages; let img_index = index"
+        [src]="image.imageSrc"
+        style="cursor: pointer; display: none"
+        (click)="imageClick(r_index, img_index)"
+        (load)="imgElement.style.display = 'block'"
+      />
+    </div>
+    <p class="realisation-title">{{ realisation.name }}</p>
+
+    <p-galleria
+      [value]="realisation.realisationImages"
+      [(visible)]="displayCustom"
+      [circular]="true"
+      [activeIndex]="activeIndex"
+      [numVisible]="7"
+      [fullScreen]="true"
+      [showItemNavigators]="false"
+      [showThumbnails]="false"
+    >
+      <ng-template pTemplate="item" let-img>
+        <div>
+          <button class="custom-nav-button-prev" (click)="imageNext()">
+            <i class="pi pi-angle-left text-4xl"></i>
+          </button>
+          <img id="realisation-full-img" [src]="currentGalleryImage" style="max-height: 88vh" />
+          <button class="custom-nav-button-next" (click)="imageNext()">
+            <i class="pi pi-angle-right text-4xl"></i>
+          </button>
+        </div>
+      </ng-template>
+    </p-galleria>
+  </div>
+</div>

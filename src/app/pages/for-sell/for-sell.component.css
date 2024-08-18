@@ -1,0 +1,49 @@
+@media screen and (max-width: 999px) {
+    .realisations-grid {
+        @apply mx-auto;
+        width: 80vw;
+        display: flex;
+        flex-flow: column;
+    }
+
+    .realisations-grid .realisation-item {
+        @apply border-2 relative cursor-pointer hover:scale-105 my-6;
+        box-shadow: 2px 2px 8px #6b7280;
+    }
+    .realisations-grid .realisation-item p-carousel {
+        pointer-events: none;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .realisations-grid > p {
+        display: none;
+    }
+    .realisations-grid {
+        @apply w-3/4 mx-auto my-10;
+        display: grid;
+        grid-template-columns: 48% 48%; 
+        column-gap: 4%;
+        row-gap: 25px;
+    }
+}
+.realisations-grid .realisation-item {
+    @apply w-full border-2 relative cursor-pointer hover:scale-105;
+    box-shadow: 2px 2px 8px #6b7280;
+}
+.realisations-grid .realisation-item .offer-description {
+    @apply absolute bottom-0 bg-black w-full bg-opacity-60 text-white;
+}
+.realisations-grid .realisation-item .offer-description p:first-of-type {
+    @apply pt-2 px-2 text-lg font-bold;
+}
+.realisations-grid .realisation-item .offer-description p:last-of-type {
+    @apply pb-3 px-2 text-sm;
+}
+.realisations-grid .realisation-item .carousel-item {
+    @apply w-full h-80;
+    background-size: cover; 
+    background-position: center
+}
+.realisations-grid > p {
+    @apply text-center text-xl font-semibold pt-4;
+}

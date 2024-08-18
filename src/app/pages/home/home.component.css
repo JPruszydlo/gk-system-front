@@ -1,0 +1,43 @@
+@media screen and (max-width: 999px) {
+    .info-panel {
+        @apply px-10
+    }
+    #short-desc {
+        grid-template-columns: 40% 60%;
+        display: flex;
+        flex-flow: column;
+    }
+    #short-desc > div:last-of-type > p {
+        @apply text-center
+    }
+    #short-desc div:first-of-type {
+        @apply w-screen h-40;
+        background-image: url('../../../assets/images/pexels-joaquin-carfagna-3131171-18111488.jpg');
+        background-position: center;
+        background-size: cover;
+        order: 2
+    }
+    #short-desc div:last-of-type {
+        @apply mb-10 px-12;
+        order: 1;
+    }
+    #short-desc img {
+        display: none;
+    }
+}
+@media screen and (min-width: 1000px) {
+    #short-desc {
+        @apply px-16 pb-10;
+        grid-template-columns: 40% 60%;
+        display: grid;
+        align-items: center;
+    }
+
+    #short-desc img {
+        @apply px-4
+    }
+}
+
+#short-desc {
+    @apply w-screen
+}

@@ -1,0 +1,43 @@
+<div class="carousel w-screen" *ngIf="useFullCarousel">
+  <p-carousel
+    id="header-carousel"
+    class="pointer-events-none fadeInLeft"
+    [value]="carouselItems"
+    [showNavigators]="false"
+    [numVisible]="1"
+    [numScroll]="1"
+    [circular]="false"
+    [autoplayInterval]="3000"
+    #headerCarousel
+    ngModel
+  >
+    <ng-template let-item pTemplate="item">
+      <div
+        id="carousel-item"
+        class="h-screen"
+        style="background-image: url('../../../assets/images/{{ item.image }}');"
+      >
+        <div class="text-box">
+          <p class="title">{{ item.contentTitle }}</p>
+          <p class="text">{{ item.contentText }}</p>
+          <button onclick="window.location.href = '/about-us'">Więcej</button>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+  <div #infoItema class="info-item">
+    <div>Szukasz solidnej firmy do zrealizowania Twojego projektu?</div>
+    <div><button onclick="window.location.href = '/contact'">Napisz do nas!</button></div>
+  </div>
+</div>
+<div
+  @fadeIn
+  style="
+    width: 100vw;
+    height: 50vh;
+    background-image: url('../../../assets/images/hardhat-4274430_1920.jpg');
+    background-position: center;
+    background-size: cover;
+  "
+  *ngIf="!useFullCarousel"
+></div>

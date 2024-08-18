@@ -1,0 +1,29 @@
+<div class="card text-white">
+  <div class="panel">
+    <div class="images">
+      <img
+        *ngFor="let image of favourites; let index = index"
+        [src]="'../../../assets/images/' + image.imageSrc"
+        [alt]="image.name"
+        style="cursor: pointer"
+        (click)="imageClick(index)"
+      />
+    </div>
+    <div class="desc">Nasze ostatnie realizacje</div>
+  </div>
+
+  <p-galleria
+    [value]="favourites"
+    [(visible)]="displayCustom"
+    [(activeIndex)]="activeIndex"
+    [numVisible]="7"
+    [circular]="true"
+    [fullScreen]="true"
+    [showItemNavigators]="true"
+    [showThumbnails]="false"
+  >
+    <ng-template pTemplate="item" let-item>
+      <img [src]="'../../../assets/images/' + item.imageSrc" [alt]="item.name" style="max-height: 88vh" />
+    </ng-template>
+  </p-galleria>
+</div>
