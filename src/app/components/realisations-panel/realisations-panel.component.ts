@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { GalleriaModule } from 'primeng/galleria'
 import { RealisationsService } from '../../services/realisations.service'
 import { RealisationFavourite } from '../../models/Realisation'
+import { NgIf } from '@angular/common'
 
 export type Image = {
   src: string
@@ -20,7 +21,7 @@ export class RealisationsPanelComponent implements OnInit {
   favourites: RealisationFavourite[] = []
   constructor(private realisationsService: RealisationsService) {}
   ngOnInit(): void {
-    this.realisationsService.getFavourites().then((result: RealisationFavourite[]) => {
+    this.realisationsService.getFavourites().then((result: any) => {
       this.favourites = result
     })
   }

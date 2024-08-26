@@ -28,12 +28,13 @@ export enum GeneralParamName {
 @Injectable({ providedIn: 'root' })
 export class ReferencesService {
   private apiUrl: string = 'http://api.gk-system.myshort.pl/references'
+  // private apiUrl: string = 'https://localhost:7068/references'
   constructor(private http: HttpClient) {}
 
-  getReferences(): Promise<Reference[]> {
-    return new Promise<Reference[]>((response) => {
-      this.http.get<Reference[]>(this.apiUrl).subscribe({
-        next: (resp: Reference[]) => {
+  getReferences(): Promise<any> {
+    return new Promise((response) => {
+      this.http.get(this.apiUrl).subscribe({
+        next: (resp: any) => {
           response(resp)
         },
       })

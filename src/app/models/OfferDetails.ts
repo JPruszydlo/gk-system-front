@@ -17,6 +17,8 @@ export type Offer = {
   id: number
   name: string
   name2: string
+  description: string
+  available: boolean
   offerPlans: OfferPlan[]
   offerParams: OfferDetails[]
   offerVisualisations: OfferVisualisation[]

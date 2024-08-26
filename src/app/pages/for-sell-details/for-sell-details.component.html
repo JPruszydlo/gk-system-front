@@ -30,7 +30,7 @@
       <ng-template pTemplate="item" let-item>
         <div class="w-full h-96">
           <img
-            [src]="'../../../assets/images/' + item"
+            [src]="item"
             style="position: absolute; top: 50%; transform: translate(-50%, -50%); max-height: 100%; left: 50%"
             (click)="toggleFullscreen(gallery?.indexOf(item))"
           />
@@ -39,7 +39,7 @@
       <ng-template pTemplate="thumbnail" let-item>
         <div
           style="
-            background-image: url('../../../assets/images/{{ item }}'); 
+            background-image: url('{{ item }}'); 
             background-position: center;
             background-repeat: no-repeat;
             background-size: auto 100%;
@@ -55,13 +55,7 @@
       <p class="panel-title mt-2">Opis oferty</p>
       <div>
         <p>
-          Nieruchomość obejmująca działkę o powierzchni wynoszącej 1539 m2, położona jest w Jaworznie (dzielnica
-          Bielany) zabudowana budynkiem mieszkalnym jednorodzinnym w zabudowie bliźniaczej. Wokół domu znajduje się
-          pięknie zagospodarowany ogród z dużą ilością drzew i krzewów co gwarantuje prywatność. Możliwość wydzielenia
-          kilku stref relaksu. W odległości ok. 450 m od nieruchomości zlokalizowany jest wjazd na drogę krajową nr 79,
-          nieco dalej w odległości ok. 6,2 km znajduje się węzeł komunikacyjny łączący drogę krajową nr 79 z autostradą
-          A4 + drogą ekspresową S1. W pobliżu znajdują się również przystanki autobusowe. Bliska lokalizacja sklepów,
-          przedszkola, szkoły.
+          {{ offerDetails?.description }}
         </p>
         <hr />
         <div class="contact">
@@ -90,7 +84,7 @@
     <div class="plan" *ngFor="let plan of offerDetails?.offerPlans">
       <p class="plan-title">{{ plan.floorName }}</p>
       <div class="image text-center">
-        <p-image [src]="'../../../assets/images/' + plan.image" [preview]="true" />
+        <p-image [src]="plan.image" [preview]="true" />
       </div>
       <div>
         <div class="details">

@@ -3,11 +3,12 @@ import { GalleriaModule } from 'primeng/galleria'
 import { RealisationsService } from '../../services/realisations.service'
 import { Realisation } from '../../models/Realisation'
 import { animate, style, transition, trigger } from '@angular/animations'
+import { NgIf } from '@angular/common'
 
 @Component({
   selector: 'app-realizations',
   standalone: true,
-  imports: [GalleriaModule],
+  imports: [GalleriaModule, NgIf],
   templateUrl: './realizations.component.html',
   styleUrl: './realizations.component.css',
 })
@@ -25,11 +26,12 @@ export class RealizationsComponent implements OnInit {
     this.realisationsService.getAll().then((result) => {
       result.map((x) => {
         x.realisationImages = x.realisationImages.map((y) => ({
-          imageSrc: '../../../assets/images/' + y.imageSrc,
+          imageSrc: y.imageSrc,
           name: x.name,
         }))
       })
       this.realisations = result
+      this.dataReady = true
     })
   }
 

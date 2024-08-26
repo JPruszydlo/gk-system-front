@@ -1,5 +1,5 @@
 export type Reference = {
-  customerName: string
-  text: string
   image: string
+  text: string
+  customerName: string
 }

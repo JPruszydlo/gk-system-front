@@ -34,7 +34,6 @@ export class ForSellDetailsComponent implements OnInit {
     return result.toFixed(2) + ' m2'
   }
   toggleFullscreen(activeIndex: number | undefined) {
-    console.log(activeIndex)
     this.fullscreenActive = activeIndex ?? 0
     this.fullscreen = !this.fullscreen
   }

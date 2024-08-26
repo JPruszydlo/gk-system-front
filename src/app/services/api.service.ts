@@ -11,6 +11,7 @@ export enum ConfigGroup {
   AboutUs,
   LogoImage,
   Carousel,
+  TechnicalBreak,
 }
 
 export enum GeneralParamName {

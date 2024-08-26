@@ -1,4 +1,4 @@
-<div class="realisations-content">
+<div class="realisations-content" *ngIf="dataReady">
   <p class="title">Realizacje</p>
   <div class="realisation" *ngFor="let realisation of realisations; let r_index = index">
     <div class="images-grid w-full">

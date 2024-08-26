@@ -3,7 +3,7 @@
     <div class="images">
       <img
         *ngFor="let image of favourites; let index = index"
-        [src]="'../../../assets/images/' + image.imageSrc"
+        [src]="image.imageSrc"
         [alt]="image.name"
         style="cursor: pointer"
         (click)="imageClick(index)"
@@ -23,7 +23,7 @@
     [showThumbnails]="false"
   >
     <ng-template pTemplate="item" let-item>
-      <img [src]="'../../../assets/images/' + item.imageSrc" [alt]="item.name" style="max-height: 88vh" />
+      <img [src]="item.imageSrc" [alt]="item.name" style="max-height: 88vh" />
     </ng-template>
   </p-galleria>
 </div>

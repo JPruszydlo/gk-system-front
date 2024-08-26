@@ -12,14 +12,10 @@
     ngModel
   >
     <ng-template let-item pTemplate="item">
-      <div
-        id="carousel-item"
-        class="h-screen"
-        style="background-image: url('../../../assets/images/{{ item.image }}');"
-      >
-        <div class="text-box">
-          <p class="title">{{ item.contentTitle }}</p>
-          <p class="text">{{ item.contentText }}</p>
+      <div id="carousel-item" class="h-screen" style="background-image: url('{{ item?.image }}');">
+        <div class="text-box" *ngIf="item.contentText != '' || item?.contentTitle != ''">
+          <p class="title" *ngIf="item.contentTitle != ''">{{ item?.contentTitle }}</p>
+          <p class="text" *ngIf="item.contentText != ''">{{ item?.contentText }}</p>
           <button onclick="window.location.href = '/about-us'">Więcej</button>
         </div>
       </div>
@@ -35,9 +31,10 @@
   style="
     width: 100vw;
     height: 50vh;
-    background-image: url('../../../assets/images/hardhat-4274430_1920.jpg');
+    background-image: url('{{ getConfig(0)?.image }}');
     background-position: center;
     background-size: cover;
   "
+  [style.margin-bottom]="useFullCarousel ? '' : '28px'"
   *ngIf="!useFullCarousel"
 ></div>

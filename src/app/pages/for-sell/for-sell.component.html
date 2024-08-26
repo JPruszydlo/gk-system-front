@@ -1,14 +1,33 @@
 <div class="realisations-grid">
   <p>Oferta domów na sprzedaż</p>
-  <div
-    @fadeIn
-    class="realisation-item"
-    *ngFor="let offer of offers"
-    [routerLink]="'/for-sell-details'"
-    [queryParams]="{ index: offer.id }"
-  >
-    <div @fadeIn>
-      <p-carousel
+  <div @fadeIn class="realisation-item" *ngFor="let offer of offers">
+    <div *ngIf="!offer.available" class="relative w-full h-full cursor-not-allowed">
+      <img [src]="offer.offerVisualisations[0].image" class="w-full h-full" />
+      <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 not-available">
+        <div
+          class="text-white relative top-1/2 w-2/3 -translate-y-1/2 bg-red-600 -rotate-6 py-4 left-1/2 -translate-x-1/2 text-3xl text-center font-bold"
+          style="
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            box-shadow: 0 0 10px black inset;
+          "
+        >
+          WYPRZEDANE
+          <img src="../../../assets/screw.png" />
+          <img src="../../../assets/screw.png" />
+          <img src="../../../assets/screw.png" />
+          <img src="../../../assets/screw.png" />
+        </div>
+        <div class="offer-description opacity-50">
+          <p>
+            {{ offer.name }}
+          </p>
+          <p>{{ offer.name2 }}</p>
+        </div>
+      </div>
+    </div>
+    <div @fadeIn *ngIf="offer.available" [routerLink]="'/for-sell-details'" [queryParams]="{ index: offer.id }">
+      <img [src]="offer.offerVisualisations[0].image" class="w-full h-full" />
+      <!-- <p-carousel
         [value]="offer.offerVisualisations"
         [showNavigators]="false"
         [showIndicators]="false"
@@ -18,9 +37,10 @@
         [autoplayInterval]="2000"
       >
         <ng-template let-item pTemplate="item">
-          <div class="carousel-item" style.background-image="url('../../../assets/images/{{ item.image }}')"></div>
+          
+          <img [src]="item.image" class="carousel h-full" />
         </ng-template>
-      </p-carousel>
+      </p-carousel> -->
 
       <div class="offer-description">
         <p>

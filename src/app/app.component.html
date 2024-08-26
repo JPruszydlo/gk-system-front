@@ -1,42 +1,8 @@
 <main *ngIf="contentReady" @fadeIn>
-  <div
-    *ngIf="!isUserAuthorised()"
-    class="w-screen h-screen"
-    style="
-      background-image: url('../assets/images/excavator-1174428_1920.jpg');
-      background-position: center;
-      background-size: cover;
-    "
-  >
-    <div class="fixed border-2 bg-black bg-opacity-90 p-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <p>
-        <input
-          type="text"
-          class="mb-3 text-xl"
-          placeholder="Użytkownik"
-          #username
-          (keyup.enter)="tryLogIn(username, passwd)"
-        />
-      </p>
-      <p>
-        <p-password
-          placeholder="Hasło"
-          [toggleMask]="false"
-          [feedback]="false"
-          class="text-xl"
-          #passwd
-          (keyup.enter)="tryLogIn(username, passwd)"
-        />
-      </p>
-      <button class="py-2 px-4 bg-red-500 hover:bg-red-600 rounded-lg mt-4" (click)="tryLogIn(username, passwd)">
-        Zaloguj
-      </button>
-    </div>
-  </div>
-  <div *ngIf="isUserAuthorised()">
-    <app-navbar (navChanged)="contentReady = false" />
-    <app-images-carousel />
+  <div>
+    <app-navbar (navChanged)="contentReady = false" *ngIf="!isTechnicalBreak" />
+    <app-images-carousel *ngIf="!isTechnicalBreak" />
     <router-outlet />
-    <app-footer />
+    <app-footer *ngIf="!isTechnicalBreak" />
   </div>
 </main>
