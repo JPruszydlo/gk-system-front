@@ -5,7 +5,7 @@ import { Realisation, RealisationFavourite } from '../models/Realisation'
 
 @Injectable({ providedIn: 'root' })
 export class RealisationsService {
-  private URL: string = 'http://api.gk-system.myshort.pl/realisations'
+  private URL: string = 'https://api.gk-system.myshort.pl/realisations'
   // private URL: string = 'https://localhost:7068/realisations'
   constructor(private http: HttpClient) {}
 

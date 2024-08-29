@@ -28,7 +28,7 @@ export enum GeneralParamName {
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  private URL: string = 'http://api.gk-system.myshort.pl/'
+  private URL: string = 'https://api.gk-system.myshort.pl/'
   constructor(private http: HttpClient) {}
 
   getGeneralConfig(configGroup: ConfigGroup) {

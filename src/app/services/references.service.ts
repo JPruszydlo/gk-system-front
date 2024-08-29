@@ -27,7 +27,7 @@ export enum GeneralParamName {
 
 @Injectable({ providedIn: 'root' })
 export class ReferencesService {
-  private apiUrl: string = 'http://api.gk-system.myshort.pl/references'
+  private apiUrl: string = 'https://api.gk-system.myshort.pl/references'
   // private apiUrl: string = 'https://localhost:7068/references'
   constructor(private http: HttpClient) {}
 

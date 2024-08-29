@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http'
 
 @Injectable({ providedIn: 'root' })
 export class OffersService {
-  private URL: string = 'http://api.gk-system.myshort.pl/offers'
+  private URL: string = 'https://api.gk-system.myshort.pl/offers'
   constructor(private http: HttpClient) {}
 
   getThumbnails() {

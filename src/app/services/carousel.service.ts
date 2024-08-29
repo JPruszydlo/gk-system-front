@@ -6,7 +6,7 @@ import { CarouselItem } from '../models/CarouselItem'
 
 @Injectable({ providedIn: 'root' })
 export class CarouselService {
-  private URL: string = 'http://api.gk-system.myshort.pl/carousel'
+  private URL: string = 'https://api.gk-system.myshort.pl/carousel'
   // private URL: string = 'https://localhost:7068/carousel'
   constructor(private http: HttpClient) {}
 
