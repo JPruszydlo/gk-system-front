@@ -11,14 +11,14 @@
         @apply text-center
     }
     #short-desc div:first-of-type {
-        @apply w-screen h-40;
-        background-image: url('../../../assets/images/pexels-joaquin-carfagna-3131171-18111488.jpg');
+        @apply w-screen h-40 ;
+        display: none;
         background-position: center;
         background-size: cover;
         order: 2
     }
     #short-desc div:last-of-type {
-        @apply mb-10 px-12;
+        @apply mb-10 px-12 pt-5;
         order: 1;
     }
     #short-desc img {

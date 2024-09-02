@@ -1,11 +1,11 @@
 <div class="realisations-grid">
   <p>Oferta domów na sprzedaż</p>
-  <div @fadeIn class="realisation-item" *ngFor="let offer of offers">
+  <div class="realisation-item h-full" *ngFor="let offer of offers">
     <div *ngIf="!offer.available" class="relative w-full h-full cursor-not-allowed">
-      <img [src]="offer.offerVisualisations[0].image" class="w-full h-full" />
+      <img [src]="'../../../assets/images/' + offer.offerVisualisations[0].image" class="w-full h-full" />
       <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 not-available">
         <div
-          class="text-white relative top-1/2 w-2/3 -translate-y-1/2 bg-red-600 -rotate-6 py-4 left-1/2 -translate-x-1/2 text-3xl text-center font-bold"
+          class="text-white relative top-1/2 w-2/3 -translate-y-1/2 bg-red-600 -rotate-6 py-4 left-1/2 -translate-x-1/2 text-3xl text-center font-bold z-50"
           style="
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             box-shadow: 0 0 10px black inset;
@@ -17,7 +17,7 @@
           <img src="../../../assets/screw.png" />
           <img src="../../../assets/screw.png" />
         </div>
-        <div class="offer-description opacity-50">
+        <div class="offer-description opacity-50 z-40">
           <p>
             {{ offer.name }}
           </p>
@@ -25,22 +25,8 @@
         </div>
       </div>
     </div>
-    <div @fadeIn *ngIf="offer.available" [routerLink]="'/for-sell-details'" [queryParams]="{ index: offer.id }">
-      <img [src]="offer.offerVisualisations[0].image" class="w-full h-full" />
-      <!-- <p-carousel
-        [value]="offer.offerVisualisations"
-        [showNavigators]="false"
-        [showIndicators]="false"
-        [numVisible]="1"
-        [numScroll]="1"
-        [circular]="false"
-        [autoplayInterval]="2000"
-      >
-        <ng-template let-item pTemplate="item">
-          
-          <img [src]="item.image" class="carousel h-full" />
-        </ng-template>
-      </p-carousel> -->
+    <div *ngIf="offer.available" [routerLink]="'/for-sell-details'" [queryParams]="{ index: offer.id }">
+      <img [src]="'../../../assets/images/' + offer.offerVisualisations[0].image" class="w-full h-full" />
 
       <div class="offer-description">
         <p>

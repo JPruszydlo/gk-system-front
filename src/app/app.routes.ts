@@ -7,9 +7,10 @@ import { HomeComponent } from './pages/home/home.component'
 import { ForSellComponent } from './pages/for-sell/for-sell.component'
 import { ForSellDetailsComponent } from './pages/for-sell-details/for-sell-details.component'
 import { TechnicalBreakComponent } from './pages/technical-break/technical-break.component'
+import { animation } from '@angular/animations'
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'for-sell-details', component: ForSellDetailsComponent },
   { path: 'for-sell', component: ForSellComponent },
   { path: 'references', component: ReferencesComponent },
@@ -17,4 +18,5 @@ export const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'technical-break', component: TechnicalBreakComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ]

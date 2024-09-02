@@ -35,14 +35,7 @@
     .realisations-content .realisation {
         @apply mb-8 w-3/4 
     }
-    .realisations-content .images-grid {
-        display: grid;
-        grid-template-columns: 18% 18% 18% 18% 18%;
-        column-gap: 2.5%;
-        row-gap: 10px;
-        width: 95%; 
-        margin: 16px auto 8px auto;
-    }
+    
 }
 .realisations-content .realisation-title {
     @apply align-middle text-center text-xl font-semibold mb-2 text-black
@@ -67,4 +60,20 @@
 .realisations-content .images-grid img {
     height: 100%;
     cursor: pointer;
+}
+
+.realisations-content .images-grid {
+    @apply flex flex-row w-full overflow-auto items-center
+    /* display: grid;
+    grid-template-columns: 18% 18% 18% 18% 18%;
+    column-gap: 2.5%;
+    row-gap: 10px;
+    width: 95%; 
+    margin: 16px auto 8px auto; */
+}
+.realisations-content .images-grid img:not(:first-of-type) {
+    @apply ml-2
+}
+.realisations-content .images-grid img {
+    max-width: 300px;
 }

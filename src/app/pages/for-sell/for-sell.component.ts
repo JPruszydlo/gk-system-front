@@ -28,12 +28,7 @@ export class ForSellComponent implements OnInit {
 
   ngOnInit(): void {
     this.offerService.getThumbnails().then((result) => {
-      let idx = 0
-      let interval = setInterval(() => {
-        if (idx >= result.length - 1) clearInterval(interval)
-        this.offers.push(result[idx])
-        idx++
-      }, 200)
+      this.offers = result
     })
   }
 }

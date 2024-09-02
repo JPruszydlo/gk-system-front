@@ -1,7 +1,7 @@
 <div class="carousel w-screen" *ngIf="useFullCarousel">
   <p-carousel
     id="header-carousel"
-    class="pointer-events-none fadeInLeft"
+    class="pointer-events-none"
     [value]="carouselItems"
     [showNavigators]="false"
     [numVisible]="1"
@@ -12,26 +12,29 @@
     ngModel
   >
     <ng-template let-item pTemplate="item">
-      <div id="carousel-item" class="h-screen" style="background-image: url('{{ item?.image }}');">
+      <div
+        id="carousel-item"
+        class="h-screen"
+        style="background-image: url('../../../assets/images/{{ item!.image }}')"
+      >
         <div class="text-box" *ngIf="item.contentText != '' || item?.contentTitle != ''">
           <p class="title" *ngIf="item.contentTitle != ''">{{ item?.contentTitle }}</p>
           <p class="text" *ngIf="item.contentText != ''">{{ item?.contentText }}</p>
-          <button onclick="window.location.href = '/about-us'">Więcej</button>
+          <button routerLink="/about-us">Więcej</button>
         </div>
       </div>
     </ng-template>
   </p-carousel>
   <div #infoItema class="info-item">
     <div>Szukasz solidnej firmy do zrealizowania Twojego projektu?</div>
-    <div><button onclick="window.location.href = '/contact'">Napisz do nas!</button></div>
+    <button routerLink="/contact">Napisz do nas!</button>
   </div>
 </div>
 <div
-  @fadeIn
   style="
     width: 100vw;
     height: 50vh;
-    background-image: url('{{ getConfig(0)?.image }}');
+    background-image: url('../../../assets/images/{{ getConfig(0)!.image }}');
     background-position: center;
     background-size: cover;
   "

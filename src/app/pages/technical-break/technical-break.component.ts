@@ -18,8 +18,4 @@ export class TechnicalBreakComponent {
       this.phone = result['phone'] == undefined ? '' : result['phone'].value
     })
   }
-
-  test() {
-    console.log(window.location)
-  }
 }

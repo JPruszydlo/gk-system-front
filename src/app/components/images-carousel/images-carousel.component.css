@@ -52,7 +52,7 @@
     @apply bg-gray-200 
 }
 .carousel .info-item button {
-    @apply px-4 py-2 bg-red-500 rounded-md hover:bg-red-600 my-2
+    @apply w-52 mx-auto py-2 bg-red-500 rounded-md hover:bg-red-600 my-2
 } 
 #carousel-item .text-box button {
     @apply px-8 py-2 bg-red-500 text-white font-semibold rounded-sm mt-3 float-right hover:bg-red-600 pointer-events-auto

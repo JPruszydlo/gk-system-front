@@ -14,7 +14,6 @@ export class RealisationsService {
     return new Promise((response) => {
       this.http.get(apiUrl).subscribe({
         next: (resp: any) => {
-          console.log(resp)
           response(resp)
         },
       })

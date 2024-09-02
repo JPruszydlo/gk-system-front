@@ -5,9 +5,9 @@
       <img
         #imgElement
         *ngFor="let image of realisation.realisationImages; let img_index = index"
-        [src]="image.imageSrc"
+        [src]="'../../../assets/images/' + image.imageSrc"
         style="cursor: pointer; display: none"
-        (click)="imageClick(r_index, img_index)"
+        (click)="imageClick(r_index, img_index); realisationTitle = realisation.name"
         (load)="imgElement.style.display = 'block'"
       />
     </div>
@@ -28,7 +28,12 @@
           <button class="custom-nav-button-prev" (click)="imageNext()">
             <i class="pi pi-angle-left text-4xl"></i>
           </button>
-          <img id="realisation-full-img" [src]="currentGalleryImage" style="max-height: 88vh" />
+          <img
+            id="realisation-full-img"
+            [src]="'../../../assets/images/' + currentGalleryImage"
+            style="max-height: 88vh"
+          />
+          <p class="text-white text-2xl">{{ realisationTitle }}</p>
           <button class="custom-nav-button-next" (click)="imageNext()">
             <i class="pi pi-angle-right text-4xl"></i>
           </button>

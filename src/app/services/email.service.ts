@@ -18,7 +18,6 @@ export class EmailService {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       }
       let url = 'https://api.gk-system.myshort.pl/home/mail'
-      console.log(url)
       let body = JSON.stringify(emailModel)
       this.http.post<EmailModel>(url, body, httpOptions).subscribe({
         next: (resp) => {

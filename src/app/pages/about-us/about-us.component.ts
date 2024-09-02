@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { ApiService, ConfigGroup } from '../../services/api.service'
 import { FormsModule } from '@angular/forms'
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-about-us',

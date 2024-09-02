@@ -22,7 +22,7 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.apiService.getGeneralConfig(ConfigGroup.AboutUs).then((result: any) => {
       this.shortDesc.nativeElement.innerHTML = result['aboutUsShort'].value
-      this.aboutUsShortImage = result['aboutUsShortImage'].value
+      this.aboutUsShortImage = result['aboutUsShortImage'].value + '?' + Date.now()
     })
   }
 }

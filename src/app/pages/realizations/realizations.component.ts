@@ -19,7 +19,7 @@ export class RealizationsComponent implements OnInit {
   tmp: string[] = []
   activeIndex: number = 0
   active_r_index: number = 0
-
+  realisationTitle: string = ''
   realisations: Realisation[] = []
   constructor(private realisationsService: RealisationsService) {}
   ngOnInit(): void {
@@ -30,6 +30,7 @@ export class RealizationsComponent implements OnInit {
           name: x.name,
         }))
       })
+
       this.realisations = result
       this.dataReady = true
     })

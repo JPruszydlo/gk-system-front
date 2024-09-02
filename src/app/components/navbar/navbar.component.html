@@ -1,5 +1,5 @@
 <div id="navbar">
-  <a href="/" (click)="navChanged.emit()">
+  <a routerLink="/" (click)="itemSelected()">
     <div class="nav-logo">
       <img src="../../../assets/images/logo2_white.png" class="h-12" />
       <p class="">GK-System</p>
@@ -9,22 +9,22 @@
     <i class="pi pi-bars text-white"></i>
   </button>
   <ul #navItems>
-    <a href="/" (click)="navChanged.emit()"><li [className]="resolveActiveElement('')">Strona główna</li></a>
+    <a routerLink="/" (click)="itemSelected()"><li [className]="resolveActiveElement('home')">Strona główna</li></a>
 
-    <a href="/for-sell" (click)="navChanged.emit()"
-      ><li [className]="resolveActiveElement('for-sell')">Domy na sprzedaż</li></a
+    <a routerLink="/for-sell" (click)="itemSelected()">
+      <li [className]="resolveActiveElement('for-sell')">Domy na sprzedaż</li></a
     >
 
-    <a (click)="navChanged.emit()" href="/about-us"><li [className]="resolveActiveElement('about-us')">O nas</li></a>
+    <a routerLink="/about-us" (click)="itemSelected()"><li [className]="resolveActiveElement('about-us')">O nas</li></a>
 
-    <a (click)="navChanged.emit()" href="/realisations"
+    <a routerLink="/realisations" (click)="itemSelected()"
       ><li [className]="resolveActiveElement('realisations')">Realizacje</li></a
     >
 
-    <a (click)="navChanged.emit()" href="/references"
+    <a routerLink="/references" (click)="itemSelected()"
       ><li [className]="resolveActiveElement('references')">Referencje</li></a
     >
 
-    <a (click)="navChanged.emit()" href="/contact"><li [className]="resolveActiveElement('contact')">Kontakt</li></a>
+    <a routerLink="/contact" (click)="itemSelected()"><li [className]="resolveActiveElement('contact')">Kontakt</li></a>
   </ul>
 </div>

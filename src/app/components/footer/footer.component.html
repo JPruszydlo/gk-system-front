@@ -10,7 +10,7 @@
         </p>
         <p class="py-2">tel: {{ getConfigParam('phone') }}</p>
         <p>
-          e-mail: <a href="mailto:biuro@gk-system.pl" class="underline">{{ getConfigParam('email') }}</a>
+          e-mail: <a href="mailto:{{ getConfigParam('email') }}" class="underline">{{ getConfigParam('email') }}</a>
         </p>
       </div>
       <div><button onclick="window.location.href='/contact'">Skontaktuj się z nami</button></div>
@@ -46,8 +46,10 @@
     </div>
     <div class="text-gray-400 py-3 text-base text-center w-screen">
       © Copyright 2024
-      <a class="font-bold hover:text-gray-500 hover:underline" href="mailto:biuro@gk-system.pl">GK-System</a> |
-      <span class="text-nowrap">All Rights Reserved</span> | Projekt i realizacja
+      <a class="font-bold hover:text-gray-500 hover:underline" href="mailto:{{ getConfigParam('email') }}">{{
+        getConfigParam('companyName')
+      }}</a>
+      | <span class="text-nowrap">All Rights Reserved</span> | Projekt i realizacja
       <a href="mailto:jakub.pruszydlo@gmail.com" class="text-nowrap font-bold hover:text-gray-500 hover:underline"
         >AJ Studio</a
       >
@@ -68,7 +70,7 @@
   ></iframe>
   <div class="text-gray-400 p-3 text-base text-center w-screen bg-black bg-opacity-80">
     © Copyright 2024
-    <a href="mailto:biuro@gk-system.pl" class="font-bold hover:text-gray-500 hover:underline">{{
+    <a href="mailto:{{ getConfigParam('email') }}" class="font-bold hover:text-gray-500 hover:underline">{{
       getConfigParam('companyName')
     }}</a>
     | All Rights Reserved | Projekt i realizacja

@@ -27,7 +27,7 @@
     }
 }
 .realisations-grid .realisation-item {
-    @apply w-full border-2 relative cursor-pointer hover:scale-105;
+    @apply w-full border-2 relative cursor-pointer hover:scale-105 ;
     box-shadow: 2px 2px 8px #6b7280;
 }
 .realisations-grid .realisation-item .offer-description {
@@ -62,4 +62,15 @@
 }
 .not-available img {
     @apply absolute w-5
+}
+.closed {
+    height: 0;
+    scale: 0;
+}
+.show {
+    animation: onShow 1s forwards;
+}
+@keyframes onShow {
+    0% {height: 0; scale: 0;}
+    100% { height: fit-content; }
 }
