@@ -2,9 +2,6 @@
     .realisations-content .title {
         @apply block
     }
-    .realisations-content {
-        @apply mt-5
-    }
     .realisations-content .realisation {
         @apply mb-5;
         display: flex;

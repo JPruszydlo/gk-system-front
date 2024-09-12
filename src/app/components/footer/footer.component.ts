@@ -12,15 +12,15 @@ import { ToastModule } from 'primeng/toast'
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [NgIf, ToastModule],
+  imports: [NgIf],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
   animations: [
     trigger('fadeIn', [transition('void -> *', [style({ opacity: 0 }), animate(500, style({ opacity: 1 }))])]),
   ],
-  providers: [MessageService],
+  providers: [],
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
   showFullFooter: boolean = true
   generalConfig: { [name: string]: GeneralConfigItem } = {}
   mapTag: string = ''
@@ -29,9 +29,10 @@ export class FooterComponent {
     private apiService: ApiService,
     private sanitizer: DomSanitizer,
     private messageService: MessageService
-  ) {
+  ) {}
+  ngOnInit(): void {
     this.showFullFooter = window.location.pathname != '/contact'
-    apiService.getGeneralConfig(ConfigGroup.Undefined).then((result: any) => {
+    this.apiService.getGeneralConfig(ConfigGroup.Undefined).then((result: any) => {
       this.generalConfig = result
       this.mapTag = this.getMapTag()
     })

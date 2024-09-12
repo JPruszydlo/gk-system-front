@@ -13,7 +13,6 @@ export class CarouselService {
   getConfig(subPage: string) {
     let apiUrl = this.URL + '/config/' + subPage
     return new Promise<CarouselItem[]>((response) => {
-      // response(this.tempConfig)
       this.http.get<CarouselItem[]>(apiUrl).subscribe({
         next: (resp: CarouselItem[]) => {
           response(resp)

@@ -16,11 +16,12 @@
       (visibleChange)="toggleFullscreen(undefined)"
     >
       <ng-template pTemplate="item" let-item>
-        <img [src]="'../../../assets/images/' + item" style="max-height: 88vh" />
+        <img [src]="'../../../assets/images/' + item" style="max-height: 70vh" (click)="toggleFullscreen(undefined)" />
       </ng-template>
     </p-galleria>
 
     <p-galleria
+      class="offer-galleria"
       [value]="gallery"
       [responsiveOptions]="responsiveOptions"
       [numVisible]="5"
@@ -28,10 +29,10 @@
       [circular]="true"
     >
       <ng-template pTemplate="item" let-item>
-        <div class="w-full h-96">
+        <div class="w-full">
           <img
             [src]="'../../../assets/images/' + item"
-            style="position: absolute; top: 50%; transform: translate(-50%, -50%); max-height: 100%; left: 50%"
+            class="w-full"
             (click)="toggleFullscreen(gallery?.indexOf(item))"
           />
         </div>
@@ -61,7 +62,7 @@
             <p>Masz pytania?</p>
             <p>Zadzwoń!</p>
           </div>
-          <p>+48 999 999 999</p>
+          <p>{{ phoneNumber }}</p>
         </div>
       </div>
     </div>

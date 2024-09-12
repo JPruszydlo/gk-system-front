@@ -8,10 +8,10 @@ import { MessageService } from 'primeng/api'
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ToastModule],
+  imports: [],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
-  providers: [MessageService],
+  providers: [],
 })
 export class ContactComponent {
   sendBtnClass: string = 'btn-disabled'

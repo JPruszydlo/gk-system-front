@@ -1,10 +1,10 @@
-<main>
-  <div>
-    <app-navbar (navChanged)="contentReady = false" *ngIf="!isTechnicalBreak" />
+<div>
+  <p-toast position="top-right" styleClass="font-bold text-lg" [style]="{ width: 'min(400px, 80vw)' }" />
+
+  <app-navbar [appContent]="appContent" (navChanged)="contentReady = false" *ngIf="!isTechnicalBreak" />
+  <div #appContent class="fade-in absolute top-0 w-screen p-0 m-0">
     <app-images-carousel *ngIf="!isTechnicalBreak" />
-    <div [@routeAnimations]="o && o.activatedRouteData && o.activatedRouteData['animation']">
-      <router-outlet #o="outlet"></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
     <app-footer *ngIf="!isTechnicalBreak" />
   </div>
-</main>
+</div>
