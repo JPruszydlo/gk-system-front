@@ -1,6 +1,6 @@
 @media screen and (max-width: 999px) {
     .panel {
-        @apply w-screen;
+        @apply w-full;
         display: flex;
         flex-flow: column;
     }
@@ -10,10 +10,10 @@
         order: 1
     }
     .panel .images {
-        @apply pb-4 ;
+        @apply pb-4 w-full items-center;
         display: grid;
-        grid-template-columns: 30% 30% 30%;
-        column-gap: 5%;
+        grid-template-columns: 32% 32% 32%;
+        column-gap: 2%;
         row-gap: 10px;
         order: 2;
     }
@@ -36,7 +36,7 @@
 }
 
 .panel {
-    @apply py-2 pl-4 pr-6 ;
+    @apply py-2 pl-4 pr-1 ;
 }
 .panel .images img {
     @apply w-full h-full;

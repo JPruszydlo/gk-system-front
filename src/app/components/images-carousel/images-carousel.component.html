@@ -13,6 +13,7 @@
   >
     <ng-template let-item pTemplate="item">
       <div
+        *ngIf="item != undefined"
         id="carousel-item"
         class="h-screen"
         style="background-image: url('../../../assets/images/{{ item!.image }}')"
@@ -34,10 +35,15 @@
   style="
     width: 100vw;
     height: 50vh;
-    background-image: url('../../../assets/images/{{ getConfig(0)!.image }}');
+    background-image: url('../../../assets/images/{{ getConfig(0)?.image }}');
     background-position: center;
     background-size: cover;
   "
   [style.margin-bottom]="useFullCarousel ? '' : '28px'"
-  *ngIf="!useFullCarousel"
+  *ngIf="!useFullCarousel && getConfig(0)?.image != '' && getConfig(0) != undefined"
+></div>
+<div
+  class="w-screen h-20"
+  [style.margin-bottom]="useFullCarousel ? '' : '28px'"
+  *ngIf="!useFullCarousel && getConfig(0)?.image == ''"
 ></div>

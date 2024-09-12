@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common'
 import { TabViewModule } from 'primeng/tabview'
 import { BrowserModule } from '@angular/platform-browser'
 import { ImageModule } from 'primeng/image'
+import { ApiService, ConfigGroup } from '../../services/api.service'
 
 @Component({
   selector: 'app-for-sell-details',
@@ -16,13 +17,13 @@ import { ImageModule } from 'primeng/image'
   styleUrl: './for-sell-details.component.css',
 })
 export class ForSellDetailsComponent implements OnInit {
-  constructor(private offerService: OffersService) {}
+  constructor(private offerService: OffersService, private apiService: ApiService) {}
   offerDetails: Offer | undefined
   activeIndex: number = 0
   displayCustom: boolean = false
   fullscreen: boolean = false
   fullscreenActive: number = 0
-
+  phoneNumber: string = ''
   gallery: string[] | undefined
 
   getTotal(details: OfferDetails[]): string {
@@ -41,6 +42,9 @@ export class ForSellDetailsComponent implements OnInit {
     let params = new URLSearchParams(window.location.search)
     let index = params.get('index')
     if (index == null) return
+    this.apiService.getGeneralConfig(ConfigGroup.Contact).then((result: any) => {
+      this.phoneNumber = result['phone'].value
+    })
     this.offerService.getOffer(parseInt(index)).then((result) => {
       this.offerDetails = result
       this.gallery = []

@@ -14,6 +14,7 @@
     <p class="realisation-title">{{ realisation.name }}</p>
 
     <p-galleria
+      class="fullscreen-galleria"
       [value]="realisation.realisationImages"
       [(visible)]="displayCustom"
       [circular]="true"
@@ -31,9 +32,10 @@
           <img
             id="realisation-full-img"
             [src]="'../../../assets/images/' + currentGalleryImage"
+            (click)="displayCustom = false"
             style="max-height: 88vh"
           />
-          <p class="text-white text-2xl">{{ realisationTitle }}</p>
+          <p class="text-white" [style.fontSize]="'min(24px, 5vw)'">{{ realisationTitle }}</p>
           <button class="custom-nav-button-next" (click)="imageNext()">
             <i class="pi pi-angle-right text-4xl"></i>
           </button>

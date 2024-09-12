@@ -12,7 +12,7 @@
     @apply left-0 ml-2
 } 
 .references-panel .p-carousel-next {
-    @apply right-0 mr-2
+    @apply right-0 mr-0
 }
 .references-panel .p-carousel-prev, .references-panel .p-carousel-next {
     @apply absolute bg-black bg-opacity-20 z-30 rounded px-6 py-6
@@ -25,7 +25,7 @@
     @apply bg-black text-white bg-opacity-30
 }
 .p-galleria-item-nav {
-    @apply bg-black text-white mx-2 bg-opacity-50 z-50;
+    @apply bg-black mt-4 text-white mx-2 bg-opacity-50 z-50;
 }
 .offer-content .fullscreen-galleria .p-galleria-item-nav {
     @apply bg-black -translate-y-14 text-white mx-2 bg-opacity-50
@@ -52,12 +52,11 @@
     @apply bg-red-600;
 }
 body, html {
+    @apply  m-0 p-0;
     overflow-x: hidden;
-    padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
-
 #offer-tab-view .p-tabview-panels {
     @apply p-0;
 }
@@ -70,10 +69,15 @@ body, html {
     @apply text-white z-50
 }
 
-.p-galleria-close-icon {
-    @apply text-white
+.fullscreen-galleria .p-galleria-close {
+    @apply hidden
 }
-
+.p-galleria-close-icon {
+    @apply text-white 
+}
+.offer-galleria {
+    @apply bg-red-400
+}
 .p-galleria-thumbnail-item-content img {
     max-height: 160px;
 }
@@ -101,3 +105,4 @@ body, html {
     list-style-position: inside; 
     margin-left: 15px; 
  }
+ 

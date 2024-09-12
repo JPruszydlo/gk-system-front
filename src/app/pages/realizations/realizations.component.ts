@@ -36,27 +36,6 @@ export class RealizationsComponent implements OnInit {
     })
   }
 
-  //   {
-  //     title: 'Dom na dąbrowej',
-  //     images: [
-  //       '../../../assets/images/construction-site-592458_1920.jpg',
-  //       '../../../assets/images/hardhat-4274430_1920.jpg',
-  //       '../../../assets/images/header_1.jpg',
-  //       '../../../assets/images/header_2.jpg',
-  //       '../../../assets/images/header_3.jpg',
-  //     ],
-  //   },
-  //   {
-  //     title: 'Dom na pogodnej',
-  //     images: [
-  //       '../../../assets/images/header_3.jpg',
-  //       '../../../assets/images/hardhat-4274430_1920.jpg',
-  //       '../../../assets/images/construction-site-592458_1920.jpg',
-  //       '../../../assets/images/header_1.jpg',
-  //       '../../../assets/images/header_2.jpg',
-  //     ],
-  //   },
-  // ]
   imageClick(r_index: number, img_index: number) {
     this.active_r_index = r_index
     this.activeIndex = img_index

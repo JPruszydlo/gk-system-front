@@ -5,11 +5,12 @@ import { Reference } from '../../models/Reference'
 import { ApiService } from '../../services/api.service'
 import { ImageModule } from 'primeng/image'
 import { ReferencesService } from '../../services/references.service'
+import { RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-references-carousel',
   standalone: true,
-  imports: [CarouselModule, ButtonModule, ImageModule],
+  imports: [CarouselModule, ButtonModule, ImageModule, RouterModule],
   templateUrl: './references-carousel.component.html',
   styleUrl: './references-carousel.component.css',
 })

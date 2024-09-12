@@ -1,13 +1,13 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core'
-import { Carousel, CarouselModule } from 'primeng/carousel'
+import { Component, OnInit } from '@angular/core'
+import { CarouselModule } from 'primeng/carousel'
 import { ButtonModule } from 'primeng/button'
 import { TagModule } from 'primeng/tag'
 import { NgIf } from '@angular/common'
 import { CarouselService } from '../../services/carousel.service'
 import { CarouselItem } from '../../models/CarouselItem'
 import { ProgressSpinnerModule } from 'primeng/progressspinner'
-import { trigger, style, animate, transition } from '@angular/animations'
 import { NavigationEnd, NavigationStart, Router, RouterLink, RouterModule } from '@angular/router'
+import { ApiService } from '../../services/api.service'
 
 @Component({
   selector: 'app-images-carousel',
@@ -19,9 +19,14 @@ import { NavigationEnd, NavigationStart, Router, RouterLink, RouterModule } from
 export class ImagesCarouselComponent implements OnInit {
   useFullCarousel: boolean = false
   carouselItems: CarouselItem[] = []
-  constructor(private carouselService: CarouselService, private router: Router) {
-    router.events.forEach((event) => {
+  constructor(private carouselService: CarouselService, private router: Router, private apiService: ApiService) {}
+  ngOnInit() {
+    this.router.events.forEach(async (event) => {
       if (event instanceof NavigationStart) {
+        // if (!this.apiService.tokenValid) {
+        //   let token = await this.apiService.refreshToken()
+        //   this.apiService.setToken(token!)
+        // }
         window.scrollTo({
           top: 0,
         })
@@ -30,19 +35,17 @@ export class ImagesCarouselComponent implements OnInit {
       if (event instanceof NavigationEnd) {
       }
     })
-  }
-  ngOnInit(): void {
-    this.loadCarousel(this.router.url)
+    this.apiService.checkVisitor()
   }
   loadCarousel(pathname: string) {
     this.carouselService.getConfig(pathname.substring(1)).then((result: CarouselItem[]) => {
       this.carouselItems = result.filter((x) => x.subPage == pathname.substring(1))
-      this.carouselItems[0].image = this.carouselItems[0].image
+      this.carouselItems[0].image = this.carouselItems[0]?.image
       this.carouselItems = this.carouselItems.map((x) => {
         return {
-          image: x.image + '?' + Date.now(),
+          image: x.image == '' ? '' : x.image + '?' + Date.now(),
           contentText: x.contentText,
-          contentTitle: x.contentText,
+          contentTitle: x.contentTitle,
           subPage: x.subPage,
         }
       })
