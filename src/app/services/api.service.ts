@@ -59,15 +59,6 @@ export class ApiService {
   refreshToken() {
     let apiUrl = this.URL + 'home/authorizeclient'
     return this.http.post<LoginToken>(apiUrl, null)
-
-    // let tmp$ = this.http.post<LoginToken>(apiUrl, null).pipe(
-    //   map((response: LoginToken) => {
-    //     console.log('resp: ' + response)
-    //     return response
-    //   })
-    // )
-    // let result = await firstValueFrom(tmp$)
-    // return result
   }
   getGeneralConfig(configGroup: ConfigGroup) {
     let apiUrl = this.URL + `home/generalconfig?configGroup=${configGroup}`

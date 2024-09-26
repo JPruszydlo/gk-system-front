@@ -23,10 +23,6 @@ export class ImagesCarouselComponent implements OnInit {
   ngOnInit() {
     this.router.events.forEach(async (event) => {
       if (event instanceof NavigationStart) {
-        // if (!this.apiService.tokenValid) {
-        //   let token = await this.apiService.refreshToken()
-        //   this.apiService.setToken(token!)
-        // }
         window.scrollTo({
           top: 0,
         })
